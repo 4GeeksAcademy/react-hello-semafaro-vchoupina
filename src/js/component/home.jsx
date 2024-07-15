@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import "../../styles/index.css";
 
-
 const TrafficLight = () => {
+    // Estado para a cor selecionada e para mostrar ou esconder a luz roxa
     const [selectedColor, setSelectedColor] = useState('none');
     const [showPurple, setShowPurple] = useState(false);
 
-    const red = selectedColor === 'red' ? 'light red selected-red' : 'light red';
-    const yellow = selectedColor === 'yellow' ? 'light yellow selected-yellow' : 'light yellow';
-    const green = selectedColor === 'green' ? 'light green selected-green' : 'light green';
-    const purple = selectedColor === "purple" ? "light purple selected-purple" : "light purple";
-
+    // Função para alterar a cor quando uma luz é clicada
     const changeColor = (e) => {
         setSelectedColor(e.target.id);
-        console.log(e.target.id);
-    }
+    };
 
+    // Função para alternar a cor de forma sequencial
     const changeColorRandom = () => {
         if (selectedColor === 'red') {
             setSelectedColor('yellow');
@@ -23,50 +19,49 @@ const TrafficLight = () => {
             setSelectedColor('green');
         } else if (selectedColor === 'green') {
             setSelectedColor('purple');
-        }
-        else if (selectedColor === 'purple') {
+        } else {
             setSelectedColor('red');
         }
-    }
+    };
 
+    // Função para mostrar ou esconder a luz roxa
     const toggleShowPurple = () => {
         setShowPurple(!showPurple);
     };
 
+    // Função para ligar ou desligar todas as luzes
     const apagarLuces = () => {
-        if (selectedColor === 'none') {
-            setSelectedColor('red');
-        } else {
-            setSelectedColor('none');
-        }
+        setSelectedColor(selectedColor === 'none' ? 'red' : 'none');
     };
 
     return (
         <>
-            <div className="container stick bg-dark"></div>
-            <div className="container traffic-light bg-dark">
-                <div onClick={changeColor} className={red} id="red"></div>
-                <div onClick={changeColor} className={yellow} id="yellow"></div>
-                <div onClick={changeColor} className={green} id="green"></div>
-                {showPurple && <div onClick={changeColor} className={purple} id="purple"></div>}
+            <div className="container stick"></div>
+            <div className="container traffic-light">
+                <div onClick={changeColor} className={`light red ${selectedColor === 'red' ? 'selected' : ''}`} id="red"></div>
+                <div onClick={changeColor} className={`light yellow ${selectedColor === 'yellow' ? 'selected' : ''}`} id="yellow"></div>
+                <div onClick={changeColor} className={`light green ${selectedColor === 'green' ? 'selected' : ''}`} id="green"></div>
+                {showPurple && (
+                    <div onClick={changeColor} className={`light purple ${selectedColor === "purple" ? "selected" : ""}`} id="purple"></div>
+                )}
             </div>
 
             <div className="container-mando">
                 <div className="mando">
                     <div className="top">
-                        <div className="marca"> TrafficLight </div>
+                        <div className="marca">TrafficLight</div>
                         <button className="boton power" onClick={apagarLuces} title="Turn ON/OFF Lights">
                             <i className="fa fa-power-off fa-2x"></i>
                         </button>
                     </div>
 
                     <div className="container-buttons">
-                        <a onClick={changeColorRandom}><span></span><span></span><span></span><span></span>
+                        <button onClick={changeColorRandom} className="button">
                             SWITCH LIGHTS
-                        </a>
-                        <a onClick={toggleShowPurple}><span></span><span></span><span></span><span></span>
+                        </button>
+                        <button onClick={toggleShowPurple} className="button">
                             {showPurple ? "HIDE PURPLE" : "SHOW PURPLE"}
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

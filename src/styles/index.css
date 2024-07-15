@@ -4,11 +4,10 @@
 }
 
 body {
-    background-image: url("https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014616_960_720.jpg");
+    background-image: url("https://portal.connectedsmartcities.com.br/wp-content/uploads/2020/07/SEGURAN%C3%87A-NO-TR%C3%82NSITO.jpeg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    background-size: 100%;
     background-size: cover;
 }
 
@@ -26,6 +25,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black; /* Adiciona o fundo preto */
     border-radius: 10px;
     width: 140px;
     padding: 10px;
@@ -43,94 +43,23 @@ body {
 }
 
 .red {
-    background: #ce3d1e;
-    background: #ff0000;
-    background: -moz-radial-gradient(center,
-            #ff0000 0%,
-            #c90000 50%,
-            #6b0000 100%);
-    background: -webkit-radial-gradient(center,
-            #ff0000 0%,
-            #c90000 50%,
-            #6b0000 100%);
-    background: radial-gradient(ellipse at center,
-            #ff0000 0%,
-            #c90000 50%,
-            #6b0000 100%);
+    background: radial-gradient(ellipse at center, #ff0000 0%, #c90000 50%, #6b0000 100%);
 }
 
 .yellow {
-    background: #fdff40;
-    background: -moz-radial-gradient(center,
-            #fdff40 0%,
-            #dee038 50%,
-            #888a23 100%);
-    background: -webkit-radial-gradient(center,
-            #fdff40 0%,
-            #dee038 50%,
-            #888a23 100%);
-    background: radial-gradient(ellipse at center,
-            #fdff40 0%,
-            #dee038 50%,
-            #888a23 100%);
+    background: radial-gradient(ellipse at center, #fdff40 0%, #dee038 50%, #888a23 100%);
 }
 
 .green {
-    background: #3dff06;
-    background: -moz-radial-gradient(center,
-            #3dff06 0%,
-            #2ec205 50%,
-            #218a03 100%);
-    background: -webkit-radial-gradient(center,
-            #3dff06 0%,
-            #2ec205 50%,
-            #218a03 100%);
-    background: radial-gradient(ellipse at center,
-            #3dff06 0%,
-            #2ec205 50%,
-            #218a03 100%);
+    background: radial-gradient(ellipse at center, #3dff06 0%, #2ec205 50%, #218a03 100%);
 }
 
 .purple {
-    background: #ea10ff;
-    background: -moz-radial-gradient(center,
-            #ea10ff 0%,
-            #9a0aa7 50%,
-            #61076a 100%);
-    background: -webkit-radial-gradient(center,
-            #ea10ff 0%,
-            #9a0aa7 50%,
-            #61076a 100%);
-    background: radial-gradient(ellipse at center,
-            #ea10ff 0%,
-            #9a0aa7 50%,
-            #61076a 100%);
+    background: radial-gradient(ellipse at center, #ea10ff 0%, #9a0aa7 50%, #61076a 100%);
 }
 
-.selected-red {
-    -webkit-box-shadow: 0px 10px 13px -7px #000000,
-        0px 0px 15px 16px rgba(255, 0, 0, 0.8);
-    box-shadow: 0px 10px 13px -7px #000000, 0px 0px 15px 16px rgba(255, 0, 0, 0.8);
-}
-
-.selected-yellow {
-    -webkit-box-shadow: 0px 10px 13px -7px #000000,
-        0px 0px 15px 16px rgba(255, 244, 32, 0.8);
-    box-shadow: 0px 10px 13px -7px #000000,
-        0px 0px 15px 16px rgba(255, 244, 32, 0.8);
-}
-
-.selected-green {
-    -webkit-box-shadow: 0px 10px 13px -7px #000000,
-        0px 0px 15px 16px rgba(4, 225, 0, 0.8);
-    box-shadow: 0px 10px 13px -7px #000000, 0px 0px 15px 16px rgba(4, 225, 0, 0.8);
-}
-
-.selected-purple {
-    -webkit-box-shadow: 0px 10px 13px -7px #000000,
-        0px 0px 15px 16px rgba(187, 11, 166, 0.8);
-    box-shadow: 0px 10px 13px -7px #000000,
-        0px 0px 15px 16px rgba(187, 11, 166, 0.8);
+.selected {
+    box-shadow: 0px 10px 13px -7px #000000, 0px 0px 15px 16px rgba(255, 255, 255, 0.8);
 }
 
 .container-mando {
@@ -195,38 +124,14 @@ body {
     padding-left: 15px;
 }
 
-a {
-    position: relative;
-    display: inline-block;
+.button {
     padding: 10px 20px;
     margin: 20px 0;
-    margin-right: 20px;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
     letter-spacing: 4px;
-    overflow: hidden;
     background-color: #ffffff6f;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.speakers {
-    width: 100px;
-    height: 8px;
-    margin: 0 auto;
-    margin-top: 10px;
-    border-radius: 20px;
-    background: #999;
-}
-
-.space {
-    height: 30px;
-    width: 100%;
-}
-
-.logo-img-phone {
-    width: 80%;
-    padding-top: 10%;
-    padding-bottom: 20%;
 }
